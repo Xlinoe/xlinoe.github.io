@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Test Website</title>
+<meta charset="utf-8">
+</head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<style>
+ul{
+height:50px;
+padding:25px;
+overflow: auto;
+}
+
+ul li{
+display:inline-block;
+margin-right: 50px;
+line-height: 50px;
+cursor:pointer;
+border-radius:10px;
+}
+
+ul li a{
+	padding:0px 40px;
+	font-size:18pt;
+	color:white;
+	font-weight: bold;
+}
+
+*{
+	padding:0px;
+	border:0px;
+	margin: 0px;
+}
+
+.bar{
+	background-color: Brown;
+	width:100%;
+	height:100px;
+}
+
+.hidden{
+	display:none;
+}
+
+.content{
+	border:3px solid aquamarine;
+	width:600px;
+	position:relative;
+}
+
+.endtag{
+	position:absolute;
+	right:0px;
+	bottom: 0px;
+}
+
+</style>
+
+<body>
+<script>
+$(document).ready(function(){
+var select_li = document.getElementsByTagName("li");
+var select_a = document.getElementsByTagName("a");
+var div = document.querySelectorAll('div.content-list div#showlist');
+
+$(".default-select").animate({backgroundColor:"White"},150);
+$(".default-select a").animate({color:"black"},150);
+
+
+for(var i=0; i<select_li.length; i++){
+select_li[i].num=i;
+select_li[i].onclick=function(){
+ Change(this.num);
+}
+}
+function Change(index){
+	for(var i =0; i<select_li.length; i++){
+		 $(select_li[i]).css("background-color","");
+		 $(select_a[i]).css("color","white");
+		 div[i].className="hidden";
+	}
+ $(select_li[index]).animate({backgroundColor:"White"},150);
+ $(select_a[index]).animate({color:"black"},150);
+ div[index].className="active";
+}
+
+});
+</script>
+
+<div class="menu-container">
+	<div class="bar">
+	<ul>
+	<li class="default-select"><a>首頁</a></li>
+	<li><a>內容</a></li>
+	<li><a>詳細</a></li>
+	<li><a>關於</a></li>
+	<li><a>額外</a></li>
+	<li><a>聯繫我們</a></li>
+	</ul>
+	</div>
+</div>
+<div class="content-list">
+
+
+
+
+
+<div id="showlist" class="active">
+	<div class="content" style="margin:10px; position:relative; left:25%;">
+	<p><span style="background-color: aquamarine; padding:3px;">
+	&lt;div class="content"&gt;
+	</span></p>
+	</br>
+
+	<div style="margin-left:15px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/ahVl4DFhAU0?rel=0&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+
+	</br>
+	<p style="text-align: right;"><span class="endtag" style="background-color: aquamarine; ">
+	&lt;/div&gt;
+	</span></p>
+	</div>
+</div>
+
+
+
+
+<div id="showlist" class="hidden">
+	<div class="content" style="margin:10px;">
+	<p><span style="background-color: aquamarine; padding:3px;">
+	&lt;div class="content"&gt;
+	</span></p>
+
+	內容
+
+	</br>
+	</br>
+	<p style="text-align: right;"><span class="endtag" style="background-color: aquamarine; ">
+	&lt;/div&gt;
+	</span></p>
+	</div>
+</div>
+
+
+
+
+<div id="showlist" class="hidden">
+	<div class="content" style="margin:10px;">
+	<p><span style="background-color: aquamarine; padding:3px;">
+	&lt;div class="content"&gt;
+	</span></p>
+
+	詳細
+
+	</br>
+	</br>
+	<p style="text-align: right;"><span class="endtag" style="background-color: aquamarine; ">
+	&lt;/div&gt;
+	</span></p>
+	</div>
+</div>
+
+
+
+
+<div id="showlist" class="hidden">
+	<div class="content" style="margin:10px;">
+	<p><span style="background-color: aquamarine; padding:3px;">
+	&lt;div class="content"&gt;
+	</span></p>
+
+	關於
+
+	</br>
+	</br>
+	<p style="text-align: right;"><span class="endtag" style="background-color: aquamarine; ">
+	&lt;/div&gt;
+	</span></p>
+	</div>
+</div>
+
+
+
+
+<div id="showlist" class="hidden">
+	<div class="content" style="margin:10px;">
+	<p><span style="background-color: aquamarine; padding:3px;">
+	&lt;div class="content"&gt;
+	</span></p>
+
+	額外
+
+	</br>
+	</br>
+	<p style="text-align: right;"><span class="endtag" style="background-color: aquamarine; ">
+	&lt;/div&gt;
+	</span></p>
+	</div>
+</div>
+
+
+
+
+<div id="showlist" class="hidden">
+	<div class="content" style="margin:10px;">
+	<p><span style="background-color: aquamarine; padding:3px;">
+	&lt;div class="content"&gt;
+	</span></p>
+
+	聯繫我們
+
+	</br>
+	</br>
+	<p style="text-align: right;"><span class="endtag" style="background-color: aquamarine; ">
+	&lt;/div&gt;
+	</span></p>
+	</div>
+</div>
+
+
+
+</div>
+</body>
+</html>
