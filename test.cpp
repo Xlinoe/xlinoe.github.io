@@ -4,19 +4,21 @@
 
 using namespace std;
 
-bool prsth(){
-    string pw = "ok";
-    string pws;
-    cin >> pws;
-    if(pw==pws){return true;}else{return false;};
-}
+
+
+bool Login_checker::checking(){
+   cin >> username;
+   cin >> password;
+   if(username==password){return true;}else{return false;};
+};
 
 int main(){
-    if(prsth()){
-        cout << "success!" << endl;
-    }else{
-        cout << "fail!" << endl;
-    };
+    Login_checker lc;
+   if(lc.checking()){
+       cout << "success!" << endl;
+   }else{
+       cout << "fail!" << endl;
+   };
     system("pause");
     return 0;
 };
