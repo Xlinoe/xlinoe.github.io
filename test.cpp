@@ -5,7 +5,7 @@
 using namespace std;
 
 bool prsth(){
-    string pw = "mpquery";
+    string pw = "ok";
     string pws;
     cin >> pws;
     if(pw==pws){return true;}else{return false;};
